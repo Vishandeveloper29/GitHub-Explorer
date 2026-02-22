@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>GitHub Explorer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-mark">GitHub Explorer</div>
+            <h1>Discover Profiles</h1>
+            <p class="subtitle">// search any github user</p>
+        </header>
+
+        <div class="search-wrap">
+            <input class="search-input" id="searchinput" type="text" placeholder="Enter GitHub username..."
+                autocomplete="off" />
+            <button class="search-btn" id="searchbtn">Search →</button>
+        </div>
+
+        <div class="error-msg" id="errormsg">⚠ User not found. Try another username.</div>
+
+        <div class="loader" id="loader">
+            <div class="loader-ring"></div>
+            <p class="loader-text">Fetching profile...</p>
+        </div>
+
+        <div class="profile-card" id="profilecard">
+            <div class="profile-top">
+                <div class="avatar-wrap">
+                    <img id="avatar" src="" alt="Avatar">
+                </div>
+                <div class="profile-info">
+                    <div class="profile-name" id="name">—</div>
+                    <div class="profile-login" id="login">@username</div>
+                    <p class="profile-bio" id="bio"></p>
+                    <div class="profile-meta" id="meta"></div>
+                    <a class="view-btn" id="viewbtn" href="#" target="_blank">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-num" id="statrepos">0</div>
+                    <div class="stat-label">Repos</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num" id="statfollowers">0</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num" id="statfollowing">0</div>
+                    <div class="stat-label">Following</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="repos-section" id="repossection">
+            <div class="section-header">
+                <div class="section-title">
+                    Top Repositories <span id="repocount">0</span>
+                </div>
+            </div>
+            <div class="repos-grid" id="reposgrid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
